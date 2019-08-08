@@ -1,0 +1,32 @@
+import random as rand
+min = 1
+max = 20
+print("would you like to play the guess game.....")
+response = input()
+if response == 'yes' or response == 'y':
+    #beginning
+    print("let's play")
+    print("Here are the rules")
+    print('\a')
+    print("Rule 1: You have to choose a number from 1 to 20")
+    print("Rule 2: You will get only 6 attempts to guess the answer")
+    print('\n')
+
+    #storing the number
+    num = rand.randint(min,max)
+    #starting with the attempts
+    for attempt in range(1,7):
+        print('\a')
+        print("ATTEMPT NO. ", attempt)
+        guess = int(input("enter your guess"))
+        if guess == num:
+            print("CONGRATULATIONS.....")
+            print("You got it right in attemp no. ",attempt)
+            break
+        else:
+            if guess < num:
+                print("OOooops...Its prbably too low")
+            else:
+                print("OOooops...Its prbably too high")
+else:
+    print("Thank You")
